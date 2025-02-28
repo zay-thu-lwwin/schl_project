@@ -1,0 +1,6 @@
+1. we must download nodejs cuz we use this as server side lanuguage
+2. use databse on mysql workbench with query in olearn.sql file
+3. go throught the  folder path of the porject from window cmd
+4. download necessry nodejs packages with command : npm install express mysql2 cors body-parser
+5. and run with command : node server.js
+6. run inex.html file from idle

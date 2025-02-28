@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--  *****   Link To Custom CSS Style Sheet   *****  -->
+    <link rel="stylesheet" type="text/css" href="dashboard_style.css">
+
+    <!--  *****   Link To Font Awesome Icons   *****  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+
+    <!--  *****   Link To Owl Carousel   *****  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bright Future</title>
+</head>
+<body>
+<!--   *** Website Container Starts ***   -->
+<div class="website-container">
+    
+<!--   *** Home Section Starts ***   -->
+<section class="home" id="home">
+    <!--   === Main Navbar Starts ===   -->
+    <nav class="main-navbar">
+        <a href="#" class="logo">
+            <img src="images/logo.png">
+        </a>
+        
+        
+        <ul class="nav-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+        </ul>
+        <div class="user-account">
+            <p><ion-icon name="person"></ion-icon><span id="user-name">User Name</span></p>
+            <div class="user-dropdown" id="user-dropdown">
+                <p>Email<p id="user-email">user@example.com</p></p>
+                <button onclick="logout()" class="logout-btn btn" id="logout-btn">Logout</button>
+            </div>
+        </div>
+	  <div class="dark-mode-toggle">
+		<i class="fa-solid fa-moon"></i>
+	  </div>
+        
+        <div class="menu-btn">
+            <span></span>
+        </div>
+    </nav>
+    <!--   === Main Navbar Ends ===   -->
+    <!--   === Banner Starts ===   -->
+    <div class="banner">
+        <div class="banner-desc">
+            <h2>Start Learning With Our Experts, Anywhere, Anytime</h2>
+            <p>Gain knowledge from top industry professionals at your convenience. Learn from anywhere in the world with flexible schedules and expert-led courses designed to help you succeed in your chosen field.</p>
+            <div id="countdown">
+                Event: CTF challenge will start in 
+                <span id="days">10</span> days 
+                <span id="hours">5</span> hours 
+                <span id="minutes">30</span> minutes 
+                <span id="seconds">45</span> seconds
+            </div>
+        </div>
+        <div class="banner-img">
+            <div class="banner-img-container">
+                <img src="images/mega-menu-academy.webp" alt="Banner Image">
+                <div class="states">
+                    <div class="total-courses">
+                        <div class="icon">
+                            <i class="fa-solid fa-book"></i>
+                        </div>
+                        <div class="desc">
+                            <span>284</span>
+                            <span>Total Courses</span>
+                        </div>
+                    </div>
+                    <div class="courses-ratings">
+                        <span>4.7<i class="fa-solid fa-star"></i></span>
+                        <span>Ratings (58k)</span>
+                    </div>
+                </div>
+                <div class="pattern">
+                    <img src="" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--   === Banner Ends ===   -->
+</section>
+<!--   *** Home Section Ends ***   -->
+
+<!--   *** Partners Section Starts ***   -->
+<!--   *** Partners Section Ends ***   -->
+
+<!--   *** Services Section Starts ***   -->
+<section class="services" id="services">
+    <!--   *** Services Header Starts ***   -->
+    <header class="section-header">
+        <h1>Why Choose Us</h1>
+    </header>
+    <!--   *** Services Header Ends ***   -->
+    <!--   *** Services Contents Starts ***   -->
+    <div class="services-contents">
+
+        <div class="service-box">
+            <div class="service-icon">
+                <i class="fa-solid fa-calendar"></i>
+            </div>
+            <div class="service-desc">
+                <h2>Flexible Timing</h2>
+                <p>Study at your own pace with our adaptable schedule. Whether you're a student, working professional, or stay-at-home parent, our courses fit into your routine seamlessly.</p>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <div class="service-icon">
+                <i class="fa-solid fa-users"></i>
+            </div>
+            <div class="service-desc">
+                <h2>Expert Teachers</h2>
+                <p>Learn from experienced professionals who bring real-world expertise to every lesson. Our instructors provide practical insights, ensuring you gain valuable industry skills.</p>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <div class="service-icon">
+                <i class="fa-solid fa-clock"></i>
+            </div>
+            <div class="service-desc">
+                <h2>24/7 Live Support</h2>
+                <p>Get assistance anytime with our round-the-clock support team, ready to help you with any questions or issues you might have.</p>
+            </div>
+        </div>
+    </div>
+    <!--   *** Services Contents Ends ***   -->
+</section>
+<!--   *** Services Section Ends ***   -->
+
+<!--   *** Courses Section Starts ***   -->
+<section class="courses" id="courses">
+    <!--   *** Courses Header Starts ***   -->
+    <header class="section-header">
+        <div class="header-text">
+            <h1>Choose Your Favourite Course</h1>
+            <p>Explore a wide range of courses tailored to your interests and career goals. Start your learning journey today with our expert-designed programs.</p>
+        </div>
+        
+    </header>
+    <!--   *** Courses Header Ends ***   -->
+    <!--   *** Courses Contents Starts ***   -->
+    <div class="course-contents">
+        <a href="cybersecurity/Cmmt prj 1.html" class="course-link">
+            <div class="course-card">
+                <img src="images\images.jpg" alt="Course Image">
+                <div class="category">
+                    <div class="subject"><h3>Cyber Security</h3></div>
+                    
+                </div>
+                <h2 class="course-title">"Secure the Digital World – Master Cybersecurity Today!"</h2>
+                <div class="course-desc">
+                    <span><i class="fa-solid fa-video"></i> 45</span>
+                    <span><i class="fa-solid fa-users"></i> 2154</span>
+                </div>
+                <div class="course-ratings">
+                    <span>4.9 <i class="fa-solid fa-star"></i></span>
+                    <span><b>$</b>120.00</span>
+                </div>
+            </div>
+        </a>
+        
+        <!-- Repeat for other courses with different URLs -->
+        <a href="web_devlopment/WebDEV.html" class="course-link">
+            <div class="course-card">
+                <img src="images\Is-Web-Development-Oversaturated.jpg" alt="Course Image">
+                <div class="category">
+                    <div class="subject"><h3>Web Development</h3></div>
+                  
+                </div>
+                <h2 class="course-title">"Build the Web, Shape the Future, Learn Web Development Today!"</h2>
+                <div class="course-desc">
+                    <span><i class="fa-solid fa-video"></i> 45</span>
+                    <span><i class="fa-solid fa-users"></i> 2154</span>
+                </div>
+                <div class="course-ratings">
+                    <span>4.9 <i class="fa-solid fa-star"></i></span>
+                    <span><b>$</b>120.00</span>
+                </div>
+            </div>
+        </a>
+        <a href="machine_learning/machineLearning01.html" class="course-link">
+            <div class="course-card">
+                <img src="images\Computer-Vision-vs.-Machine-Learning-img.jpg" alt="Course Image">
+                <div class="category">
+                    <div class="subject"><h3>Machine Learning</h3></div>
+      
+                </div>
+                <h2 class="course-title">Empower Your Future with Machine Learning – Learn, Build, Innovate!</h2>
+                <div class="course-desc">
+                    <span><i class="fa-solid fa-video"></i> 45</span>
+                    <span><i class="fa-solid fa-users"></i> 3432</span>
+                </div>
+                <div class="course-ratings">
+                    <span>4.9 <i class="fa-solid fa-star"></i></span>
+                    <span><b>$</b>120.00</span>
+                </div>
+            </div>
+        </a>
+        
+        <!-- Repeat for other courses with different URLs -->
+        <a href="es/EmbeddedSystem.html" class="course-link">
+            <div class="course-card">
+                <img src="images/adi-goldstein-eusvweosble-unsplash-936712ed5a1e452eaa3aa6efcb61cad7.jpg" alt="Course Image">
+                <div class="category">
+                    <div class="subject"><h3>Embedded System</h3></div>
+                  
+                </div>
+                <h2 class="course-title">"Bringing Intelligence to Devices – Learn Embedded Systems Today!"</h2>
+                <div class="course-desc">
+                    <span><i class="fa-solid fa-video"></i> 32</span>
+                    <span><i class="fa-solid fa-users"></i> 1331</span>
+                </div>
+                <div class="course-ratings">
+                    <span>4.9 <i class="fa-solid fa-star"></i></span>
+                    <span><b>$</b>120.00</span>
+                </div>
+            </div>
+        </a>
+        
+	  <a href="" class="course-link">
+        <div class="course-card">
+            <img src="images/Intro-to-Networking-Temp-no-watermark-.png">
+            <div class="category">
+                <div class="subject"><h3>Networking</h3></div>
+           
+            </div>
+            <h2 class="course-title">"Connect the World – Master Networking Today!"</h2>
+            <div class="course-desc">
+                <span><i class="fa-solid fa-video"></i> 45</span>
+                <span><i class="fa-solid fa-users"></i> 2154</span>
+            </div>
+            <div class="course-ratings">
+                <span>4.9 <i class="fa-solid fa-star"></i></span>
+                <span><b>$</b>120.00</span>
+            </div>
+        </div>
+	  </a>
+	  <a href="" class="course-link">
+
+        <div class="course-card">
+            <img src="images/Data-Science-3.png">
+            <div class="category">
+                <div class="subject"><h3>Data Science and Analytics</h3></div>
+              
+            </div>
+            <h2 class="course-title">"Transform Data into Insights – Master Data Science & Analytics Today!"</h2>
+            <div class="course-desc">
+                <span><i class="fa-solid fa-video"></i> 45</span>
+                <span><i class="fa-solid fa-users"></i> 2154</span>
+            </div>
+            <div class="course-ratings">
+                <span>4.9 <i class="fa-solid fa-star"></i></span>
+                <span><b>$</b>120.00</span>
+            </div>
+        </div>
+	  </a>
+	  <a href="" class="course-link">
+
+        <div class="course-card">
+            <img src="images/gettyimages-1277731016-20-284-29-1-jpg.webp">
+            <div class="category">
+                <div class="subject"><h3>Cloud Computing</h3></div>
+  
+            </div>
+            <h2 class="course-title">"Power the Future – Learn Cloud Computing Today!"</h2>
+            <div class="course-desc">
+                <span><i class="fa-solid fa-video"></i> 45 </span>
+                <span><i class="fa-solid fa-users"></i> 2154</span>
+            </div>
+            <div class="course-ratings">
+                <span>4.9 <i class="fa-solid fa-star"></i></span>
+                <span><b>$</b>120.00</span>
+            </div>
+        </div>
+	  </a>
+	  <a href="" class="course-link">
+        <div class="course-card">
+            <img src="images/elecAAS.jpg">
+            <div class="category">
+                <div class="subject"><h3>Computer Engineering</h3></div>
+           
+            </div>
+            <h2 class="course-title">"Design, Innovate, and Build – Master Computer Engineering Today!"</h2>
+            <div class="course-desc">
+                <span><i class="fa-solid fa-video"></i> 45</span>
+                <span><i class="fa-solid fa-users"></i> 2154</span>
+            </div>
+            <div class="course-ratings">
+                <span>4.9 <i class="fa-solid fa-star"></i></span>
+                <span><b>$</b>120.00</span>
+            </div>
+        </div>
+	  </a>
+    </div>
+    <!--   *** Courses Contents Ends ***   -->
+</section>
+<!--   *** Courses Section Ends ***   -->
+
+<!--   *** Courses Categories Section Starts ***   -->
+<section class="categories" id="categories">
+    <!--   === Categories Section Header Starts ===   -->
+    <header class="section-header">
+        <h1>Browse Courses By Categories</h1>
+        
+    </header>
+    <!--   === Categories Section Header Ends ===   -->
+    <!--   === Categories Section Contents Starts ===   -->
+    <div class="categories-contents">
+        
+        <div class="category-item">
+            <div class="category-icon">
+                <i class="fa-solid fa-palette"></i>
+            </div>
+            <div class="category-desc">
+                <h3>Designing</h3>
+                <p>Master the art of design with courses that teach you the latest tools and techniques used by industry professionals.</p>
+            </div>
+        </div>
+
+        <div class="category-item">
+            <div class="category-icon">
+                <i class="fa-solid fa-code"></i>
+            </div>
+            <div class="category-desc">
+                <h3>Development</h3>
+                <p>Build your coding skills with hands-on development courses covering programming languages and frameworks.</p>
+            </div>
+        </div>
+
+        <div class="category-item">
+            <div class="category-icon">
+                <i class="fa-solid fa-bullhorn"></i>
+            </div>
+            <div class="category-desc">
+                <h3>Marketing</h3>
+                <p>Learn effective marketing strategies to promote products and services in today’s digital landscape.</p>
+            </div>
+        </div>
+
+        <div class="category-item">
+            <div class="category-icon">
+                <i class="fa-solid fa-camera"></i>
+            </div>
+            <div class="category-desc">
+                <h3>Photography</h3>
+                <p>Capture stunning images with photography courses that cover composition, lighting, and editing skills.</p>
+            </div>
+        </div>
+    </div>
+    <!--   === Categories Section Contents Ends ===   -->
+</section>
+<!--   *** Courses Categories Section Ends ***   -->
+
+<!--   *** Testimonials Section Starts ***   -->
+<section class="testimonials" id="testimonials">
+    <!--   === Testimonials Section Header Starts ===   -->
+    <header class="section-header">
+        <h1>Testimonials</h1>
+    </header>
+    <!--   === Testimonials Section Header Ends ===   -->
+    <!--   === Testimonials Contents Starts ===   -->
+    <div class="owl-carousel owl-theme testimonials-slider">
+
+        <div class="item testimonials-item">
+            <div class="profile">
+                <div class="profile-image">
+                    <img src="images/persons/Untitled.jpg">
+                </div>
+                <div class="profile-desc">
+                    <span>Will Smith</span>
+                    <span>Cybersecurity Student</span>
+                </div>
+            </div>
+            <p>I’ve gained so much knowledge from this platform. The instructors are top-notch, and the flexibility allowed me to learn at my own pace while balancing my job. Highly recommend it to anyone looking to upskill!</p>
+            <div class="quote">
+                <i class="fa fa-quote-left"></i>
+            </div>
+            <div class="ratings">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+        </div>
+
+        <div class="item testimonials-item">
+            <div class="profile">
+                <div class="profile-image">
+                    <img src="images/persons/Untitled.webp">
+                </div>
+                <div class="profile-desc">
+                    <span>Leonardo DiCaprio</span>
+                    <span>Machine Learning Student</span>
+                </div>
+            </div>
+            <p>The courses here are incredibly well-structured. I was able to apply what I learned directly to my work, and the support team was always there when I needed help. A fantastic learning experience!</p>
+            <div class="quote">
+                <i class="fa fa-quote-left"></i>
+            </div>
+            <div class="ratings">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+        </div>
+
+        <div class="item testimonials-item">
+            <div class="profile">
+                <div class="profile-image">
+                    <img src="images/persons/Untitledt.webp">
+                </div>
+                <div class="profile-desc">
+                    <span>Tom Cruise</span>
+                    <span>Networking Student</span>
+                </div>
+            </div>
+            <p>This platform transformed my career. The practical lessons and real-world examples made all the difference, and I felt supported every step of the way. I’m so grateful I found this resource!</p>
+            <div class="quote">
+                <i class="fa fa-quote-left"></i>
+            </div>
+            <div class="ratings">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+        </div>
+
+        <div class="item testimonials-item">
+            <div class="profile">
+                <div class="profile-image">
+                    <img src="images/persons/UntitledK.jpg">
+                </div>
+                <div class="profile-desc">
+                    <span>Kim Kardashian</span>
+                    <span>Web Development Student</span>
+                </div>
+            </div>
+            <p>Learning here has been a game-changer. The content is engaging, the teachers are experts, and the community is supportive. I’ve already recommended it to all my friends!</p>
+            <div class="quote">
+                <i class="fa fa-quote-left"></i>
+            </div>
+            <div class="ratings">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+        </div>
+
+        <div class="item testimonials-item">
+            <div class="profile">
+                <div class="profile-image">
+                    <img src="images/persons/UntitledD.jpg">
+                </div>
+                <div class="profile-desc">
+                    <span>Jhon Donald</span>
+                    <span>Embedded System student</span>
+                </div>
+            </div>
+            <p>I was hesitant at first, but this platform exceeded my expectations. The courses are thorough, and the 24/7 support made it easy to stay on track. I’m now more confident in my skills!</p>
+            <div class="quote">
+                <i class="fa fa-quote-left"></i>
+            </div>
+            <div class="ratings">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+        </div>
+    </div>
+    <!--   === Testimonials Contents Ends ===   -->
+</section>
+<!--   *** Testimonials Section Ends ***   -->
+
+<!--   *** Footer Section Starts ***   -->
+<section class="footer" id="footer">
+    
+    <!--   === Footer Contents Starts ===   -->
+    <div class="footer-contents">
+        
+        <div class="footer-col footer-col-1">
+            <div class="col-title">
+                <img src="images/logo.png">
+            </div>
+            <div class="col-contents">
+                <p>Join a community of learners dedicated to growth and success. Our platform offers the tools and resources you need to excel.</p>
+                <p>Stay updated with the latest courses and industry trends by subscribing to our newsletter today.</p>
+            </div>
+        </div>
+
+        <div class="footer-col footer-col-2">
+            <div class="col-title">
+                <h3>Contact</h3>
+            </div>
+            <div class="col-contents">
+                <div class="contact-row">
+                    <span>Address</span>
+                    <span>Address: 456 Yangon Road, Yangon, Myanmar  </span>
+                </div>
+                <div class="contact-row">
+                    <span>Phone</span>
+                    <span>+95 1 234 5678</span>
+                </div>
+                <div class="contact-row">
+                    <span>Website</span>
+                    <span>brightfuture.com</span>
+                </div>
+                <div class="contact-row">
+                    <span>Email</span>
+                    <span>info@brightfuture.com</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-col footer-col-3">
+            <div class="col-title">
+                <h3>Quick Links</h3>
+            </div>
+            <div class="col-contents">
+                <a href="#">Home</a>
+                <a href="#">Services</a>
+                <a href="#">Courses</a>
+                <a href="#">Categories</a>
+                <a href="#">Testimonials</a>
+            </div>
+        </div>
+
+        <div class="footer-col footer-col-4">
+            <div class="col-title">
+                <h3>Newsletter</h3>
+            </div>
+            <div class="col-contents">
+                <form class="newsletter">
+                    <input type="email" placeholder="Your Email">
+                    <button class="newsletter-btn btn" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--   === Footer Contents Ends ===  
+	 <div class="copy-rights">
+        <p>Created By <b>Five Star Tutorials</b> All Rights Reserved</p>
+    </div> -->
+    
+</section>
+<!--   *** Footer Section Ends ***   -->
+</div>
+<!--   *** Website Container Ends ***   -->
+
+<!--   *** Link To JQuery ***   -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+<!--   *** Link To Owl Carousel ***   -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<!--   *** Link To Custom Script File ***   -->
+<script type="text/javascript" src="dashboard_script.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

@@ -1,0 +1,412 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Systems Course</title>
+    <style>
+        
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New';
+}
+ header {
+            
+            padding: 20px;
+      text-align: center;
+        }
+body {background-color: rgb(211,208,208);
+    width: 100%;
+    min-height: 100vh; 
+    
+}
+        /* Dark Theme Variables */
+        html {
+            scroll-behavior: smooth;
+            --primary-clr: #0a0a0a;
+            --primary-light-clr: #0b0b0b5b;
+            --bg-clr-1: #808080;
+            --dark-heading-clr: #F4F4F4;
+            --dark-text-clr: #CCCCCC;
+        
+} 
+
+.website-container {
+    width: 100%;
+    max-width: 1400px;
+    min-height: 100vh;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+       
+            
+/* Content Area Styling */
+.content-area {
+    width: 100%;
+    padding: 100px 8% 20px; /* Space below navbar */
+    flex-grow: 1;
+}
+
+.content-area .page {
+    width: 100%;
+}
+
+.content-area .page h1 {
+    color: var(--dark-heading-clr);
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.content-area .page p {
+    color: var(--dark-text-clr);
+    font-size: 44px;
+}
+main {
+            padding: 20px;
+        }
+section {
+           background-color:rgb(29, 80, 76);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* More prominent shadow */
+        }
+        
+        h2 {
+            color: var(--primary-clr);
+        }
+
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: rgb(211,208,208);
+        }
+
+        .video {
+            gap: 20px;
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(11, 9, 9, 0.15);
+
+           
+        }
+
+        .video iframe {
+            width: 400px;
+            height:225px;
+            border: none;
+            transition: all 0.3s ease-in-out;
+        }
+     
+        article {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+
+          
+        }
+
+        article h3 {
+            color: var(--dark-heading-clr);
+        }
+
+         h4 {
+            color: var(--dark-heading-clr);
+
+            font-size: 2.7em; /* Larger header font */
+        
+        }
+
+        
+        /* Added more specific styles for better visual appeal */
+        h1 {
+            font-size: 2.7em; /* Larger header font */
+        }
+
+        h2 {
+            font-size: 2em;
+        }
+        
+        p {
+            line-height: 2.6; /* Improved readability */
+            color:white;
+        }
+        ul{
+            line-height: 2.6; /* Improved readability */
+            color:white;
+        }
+footer {
+    background-color:#121212;
+    color: var(--dark-heading-clr);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.footer-content p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.socials {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.socials li {
+    display: inline;
+}
+
+.socials a {
+    color: var(--dark-heading-clr);
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.socials a:hover {
+    color: var(--primary-clr);
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+
+body.dark-mode {
+    background-color: #1e1e1e;
+}
+
+
+body.dark-mode .video-container{
+    background-color: #1e1e1e;
+}
+body.dark-mode .wh{
+    color: white;
+}
+
+
+    </style>
+
+<script>
+    const videoContainer = document.querySelector('.video-container');
+
+
+const videoIds = [
+        'dQw4w9WgXcQ', // Example video ID - Replace with your own
+        'VIDEO_ID_2',
+        'VIDEO_ID_3',
+        'VIDEO_ID_4',
+        'VIDEO_ID_5',
+        'VIDEO_ID_6',
+        'VIDEO_ID_7',
+        'VIDEO_ID_8',
+        'VIDEO_ID_9',
+        'VIDEO_ID_10'
+    ];
+    videoIds.forEach(videoId => {
+        const video = document.createElement('div');
+        video.classList.add('video');
+        video.innerHTML = 
+            <iframe width="400" height="225" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>
+        ;
+        videoContainer.appendChild(video);
+    });
+
+</script>
+</head>
+<body>
+ <section> <header>
+        <h1>Embedded Systems Course</h1>
+    </header></section>
+<section><div class="website-container">   
+           
+            <h2><br>Introduction to Embedded Systems</h2><br>
+            <p>An embedded system is a specialized computing system designed to perform dedicated tasks within a larger system. 
+               Unlike general-purpose computers, embedded systems are optimized for specific applications, offering high efficiency, reliability,    
+               and low power consumption. They are usually built using microcontrollers or microprocessors, along with necessary software, sensors, and 
+               other electronic components.
+               Embedded systems can be found in various domains, including consumer electronics, automotive systems, industrial automation, and  
+               medical devices. They operate with minimal human intervention and are designed for real-time or near real-time processing.  
+               Some embedded systems function independently, while others integrate with larger systems to enhance performance. 
+               For example, a digital camera’s firmware is an embedded system that processes images and videos efficiently. Other examples include 
+               washing machines, printers, ATMs, and microwave ovens. These systems often use lightweight operating systems or firmware specifically 
+               designed for their function. Since embedded systems are optimized for specific tasks, they generally have lower memory and processing power 
+               than general-purpose computers, but they excel in power efficiency and reliability.</p><br>
+               <div class="container1">
+               <img src="images/photo_2025-02-28_13-42-59.jpg"   height="300" width="500"  alt="center">
+                <img src="images/85699bd4395923a7cd974fa48965f3f4.jpg"   height="300" width="500"  alt="center">
+            </div> 
+                </section>
+    
+      
+     <h2 class="wh" ><br>Course Videos</h2>  
+             <div class="video-container">  
+                <div class="video">  
+                    <iframe width="400" height="225" src="https://www.youtube.com/embed/playlist?list=PLOuGMjEXHeeDs9QJm-sFZRW_B4snzaiv4&si=_mtYasW8IAJYcQh7"
+                     title="YouTube video player" frameborder="0"  allowfullscreen></iframe>  
+                    <h3 class="wh" >Introduction to Embedded Systems</h3>  
+                </div>  
+               
+            </div>
+  
+  <section>
+               <h2><br>Types of Embedded Systems</h2> </br> 
+            <ul> 
+                <li><strong>Real-Time Embedded Systems:</strong> Requires real-time responses to function correctly. (e.g., Airbag Systems, Medical Monitoring Devices)</li> 
+                <li><strong>Networked Embedded Systems:</strong>  Connected via networks like the internet or local networks. (e.g., Smart Home Devices, IoT Security Cameras)</li> 
+                <li><strong>Mobile Embedded Systems:</strong> Portable embedded systems integrated into mobile devices. (e.g., Smartphones, Wearable Devices)</li> 
+            </ul> 
+           </section>
+
+
+<h2 class="wh" ><br>Course Videos</h2>  
+             <div class="video-container">  
+                <div class="video">  
+                    <iframe src="https://www.youtube.com/embed/gakxtA88lRU?si=7KGmLvLPjNo4J7WT" title="YouTube video player" frameborder="0" allow="accelerometer; 
+                     autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                    <h3 class="wh" >Hardware Components</h3>  
+                </div>  
+
+                </div>
+
+<section>
+               <h2><br>Why Should You Learn Embedded Systems?</h2>  </br> 
+              <p>Embedded systems are at the core of modern technology, powering everything from smartphones to industrial machines. Learning embedded systems can open many career
+                 opportunities and provide valuable skills.Benefits of Learning Embedded Systems:</p> 
+             <ul>  
+                 <li><strong>High Demand & Career Opportunities:</strong>Embedded systems engineers are needed in automotive, healthcare, aerospace, consumer electronics, and IoT
+                     industries.Companies like Tesla, Apple, Samsung, and Intel constantly seek skilled professionals.</li>  
+                 <li><strong>Competitive Salaries:</strong>Embedded engineers earn attractive salaries, with experienced professionals making $100,000+ per year in top markets.</li>  
+                 <li><strong>Innovation & Cutting-Edge Technology:</strong>Work on AI-powered smart devices, self-driving cars, medical devices, and industrial automation.Play a role
+                       in developing the future of IoT, robotics, and AI-driven hardware.</li>  
+                 <li><strong>Strong Combination of Software & Hardware Skills:</strong> You gain expertise in C/C++, Python, Assembly, microcontrollers (ARM, PIC, AVR), and real-time
+                       operating systems (RTOS).Understanding both hardware and software makes you more versatile in tech fields.</li>  
+                 <li><strong>Job Stability & Future Growth:</strong>Embedded systems are used in critical infrastructure, consumer electronics, and smart devices, ensuring long-term
+                       career stability.The IoT industry alone is expected to reach $1.5 trillion+ by 2030, increasing the demand for skilled engineers.</li>  
+                 <li><strong>Entrepreneurship Opportunities:</strong>If you master embedded systems, you can develop your own IoT devices, robotics, or automation products and start your
+                       own business.</li>  
+                 <li><strong>Fun & Challenging Work:</strong>You get to solve real-world problems, work with physical devices, and create innovative solutions.</li> 
+             </ul>  
+             <p>Unlike traditional software jobs, embedded systems involve both coding and hardware design, making it an exciting field.</p>  
+          
+            </section>
+
+<h2 class="wh" ><br>Course Videos</h2>  
+ 
+             <div class="video-container">  
+          <div class="video">  
+                    <iframe src="https://www.youtube.com/embed/4GWT3BABypU?si=NRB9VbRqZlix36S9" title="YouTube video player" frameborder="0" allow="accelerometer;
+                     autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                    <h3 class="wh" >Software Components</h3>  
+                </div> 
+                </div> 
+<section>
+             <h2><br>Career Opportunities in Embedded Systems</h2> </br>  
+              <p>The embedded systems industry provides numerous career paths, each requiring expertise in hardware, software, and real-time system development. Some common job roles
+                 include:</p>  
+             <ul>  
+                  
+                 <li><strong>Embedded Software Engineer:</strong> Develops and optimizes firmware and low-level software for microcontrollers and processors. 
+</li>  
+                 <li><strong>Embedded Hardware Engineer:</strong>Designs circuit boards, selects components, and ensures compatibility with software systems.</li>  
+                 <li><strong>Firmware Developer:</strong>Focuses on writing and debugging firmware that controls hardware functions.</li>  
+                 <li><strong>IoT Engineer:</strong> Works on smart devices and connected systems that rely on embedded technology.</li><li><strong>Automotive Embedded Engineer:
+                         </strong>Specializes in software and hardware for vehicle control systems, infotainment, and ADAS (Advanced Driver Assistance Systems).</li>  
+                 <li><strong>Medical Device Engineer:</strong> Designs embedded systems for healthcare devices like pacemakers and monitoring equipment.</li>  
+                 <li><strong>Robotics Engineer:</strong>Develops control systems for autonomous machines and industrial robots.</li>  
+             </ul>  
+             <p>These roles exist across industries such as consumer electronics, automotive, healthcare, telecommunications, aerospace, and defense. Startups, multinational corporations,
+                     and research institutions all require embedded system professionals.</p>
+
+
+</section>
+ <h2 class="wh" ><br>Course Videos</h2>  
+<div class="video-container">  
+<div class="video">  
+                    <iframe src="https://www.youtube.com/embed/Zu207kq5YN8?si=dhXU2NnZkLTc86Sf" title="YouTube video player" frameborder="0" allow="accelerometer; 
+                     autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                    <h3 class="wh" >USB</h3>  
+                </div>
+
+
+</div>
+        <section>
+              <h2><br>Key Responsibilities in Embedded Systems</h2>  </br> 
+              <p>A professional in embedded systems is responsible for designing, developing, testing, and maintaining embedded hardware and software. Some core tasks include:</p> 
+             <ul>  
+                 <li><strong>Hardware Development:</strong>Designing PCBs, selecting microcontrollers, integrating sensors, and ensuring power efficiency.</li>  
+                 <li><strong>Firmware Development:</strong>Writing and debugging code in C, C++, or Python for microcontrollers and processors.</li>  
+                 <li><strong>Real-Time System Development:</strong>Implementing real-time operating systems (RTOS) for time-sensitive applications.</li>  
+                 <li><strong>Testing and Debugging:</strong> Using tools like oscilloscopes, logic analyzers, and simulators to ensure system reliability.</li>  
+                 <li><strong>Optimization and Power Management:</strong>Reducing power consumption and optimizing performance for battery-powered devices.</li>  
+                 <li><strong>Security Implementation:</strong>Ensuring embedded systems are protected against cyber threats, especially in IoT and automotive industries.</li>  
+                 <li><strong>Integration and Deployment:</strong> Working with teams to integrate embedded systems into larger hardware and software ecosystems.</li>  
+             </ul>  
+             <p>Overall, embedded systems is a dynamic field with promising career growth, attractive salaries, and intellectually challenging responsibilities. As technology advances, 
+                        demand for skilled embedded engineers continues to rise across various industries.</p>  
+          
+  
+            </section>
+
+<section>
+               <h2><br>Income Potential in Embedded Systems</h2>  </br> 
+ 
+              <p>Salaries in embedded systems depend on factors such as experience, location, industry, and company size. Below is a general salary range based on experience:</p> 
+             <ul>  
+                 <li><strong>Entry-Level (0-2 years):</strong> $50,000 – $80,000 per year</li>  
+                 <li><strong>Mid-Level (3-7 years):</strong> $80,000 – $120,000 per year</li>  
+                 <li><strong>Senior-Level (8+ years):</strong> $120,000 – $150,000+ per year</li>  
+                 <li><strong>Embedded Systems Architects and Specialists:</strong> $150,000 – $200,000+ per year</li>  
+             </ul>  
+             <p>Freelancers and consultants in embedded systems can earn even higher rates, often charging $50 – $200 per hour depending on expertise. High-demand industries like
+                automotive, aerospace, and healthcare tend to offer higher salaries compared to consumer electronics or IoT startups.</p> 
+ 
+ 
+            </section>
+            </div>
+
+        </div>
+
+<footer>
+    <div class="footer-content">
+        <h4>Follow Your Dream Goals</h4>
+        <p>Discover about embedded systems</p>
+  <p>Give yourself unlimited access to courses and<br>
+     certificate programs in topics like real-time embedded system,<br>
+     networked time embedded system,and mobile embedded system.<br>
+        
+    </div>
+    
+    <div class="footer-content">
+        <h3>Embedded Systems Course</h3>
+        <p>Enhance your skills with our comprehensive embedded systems tutorials and resources.</p>
+        
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Embedded Systems Course. All rights reserved.</p>
+    </div>
+</footer>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<script src="script.js"></script>
+
+    </body>
+</html>

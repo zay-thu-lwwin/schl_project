@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning</title>
+    <style>
+        
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            --primary-clr: #208245;
+            --primary-medium-clr: #d8e9df;
+            --primary-light-clr: #edfaf1;
+            --bg-clr-1: #ffffff;
+            --dark-heading-clr: #232d39;
+            --dark-text-clr: #6c757d;
+            --light-heading-clr: #efefef;
+            --light-text-clr: #cecece;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            background-color: black;
+            
+        }
+
+        button.btn {
+            padding: 10px 18px;
+            background-color: var(--primary-clr);
+            color: var(--light-heading-clr);
+            font-size: 15px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button.btn:hover {
+            background-color: var(--light-heading-clr);
+            color: var(--primary-clr);
+            border: 1px solid var(--primary-clr);
+        }
+
+        .website-container {
+            width: 100%;
+            max-width: 1400px;
+            min-height: 100vh;
+            margin: 0px auto;
+            display: flex;
+            flex-direction: column;
+        }
+          
+        h2 {
+            color: white ;
+            text-size-adjust: 50pxpx;
+             padding-top : 50 px ;
+             padding-bottom:30px;
+             text-align: center;
+             font-size: 50px;
+             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        } 
+        h3 {
+            color:white;
+            text-size-adjust: 20px;
+             padding-top : 20px ;
+             padding-bottom:20px;
+             text-size-adjust: 30px;
+        } 
+       
+      
+        h5{
+            color:white;
+            font-style: italic;
+            padding: 30px;
+            text-align: center;
+            font-size: 4rem;
+        } 
+
+        .light{
+            background-color:#121212;
+            
+        }
+        .brown{
+            background-color: #1e1e1e;
+            color: whitesmoke;
+            width: 100%;
+        }
+        .black{ background-color:#121212 ;
+             width: 100%;
+            border : whitesmoke ;}
+       p{
+        
+        font-family:  Arial, sans-serif;
+        color:white;
+        line-height: 1.6;
+        
+        
+       }
+
+       
+            .abovecontiner{
+                height: 200px;
+                width: 100%;
+                background-color:rgb(29, 80, 76) ;
+            }
+            .above{ color : whitesmoke;
+                margin-left: auto;
+                margin-right: auto;
+               padding-top: 4rem;
+                font-style: italic;
+                width:100%;
+                font-size: 50px; 
+                gap: 5rem;
+                text-align: center;
+            }
+           
+            .line{
+                font-family: 'roboto';
+                color: white;
+                text-align: center;
+                padding-top: 5px;
+                font-size: 23px;
+            }
+
+            .text{
+                color: white;
+            }
+            
+        /* Content Area Styling */
+.content-area {
+    width: 100%;
+    padding: 100px 8% 20px; /* Space below navbar */
+    flex-grow: 1;
+}
+
+.content-area .page {
+    width: 100%;
+}
+
+.content-area .page h1 {
+    color: var(--dark-heading-clr);
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.content-area .page p {
+    color: var(--dark-text-clr);
+    font-size: 16px;
+}
+
+        
+       
+
+        
+
+        /* Video Insertion Styles */
+        .videocontainer {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+            margin: auto;
+            padding: 50px;
+            
+        }
+
+      /*  .videocontainer:hover {
+            transform: scale(1.1);
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+            border-color: green;
+        } */
+
+        .video {
+            flex: 1 1 45%;
+            box-sizing: border-box;
+        }
+
+        .video iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+
+        .info {
+            max-width: 300px;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+            color: white;
+        }
+
+       
+
+        .video-tab-content {
+            display: none;
+        }
+
+        .video-tab-content.active {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .video-tab-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top : 0px;
+            margin-bottom: 0px;
+
+        }
+
+        .video-tab-buttons button {
+            padding: 20px 30px ;
+            cursor: pointer;
+            border: none;
+            background-color: black;
+            transition: background-color 0.3s;
+            color:white;
+            font-family:  monospace;
+        }
+
+        .video-tab-buttons button.active {
+            background-color  : #006b00;
+            
+        }
+
+        /* Collapsible Paragraph Styles */
+        .collapsible-container {
+            margin-bottom: 20px;
+            border: 0px solid var(--primary-clr);
+            border-radius: 2px;
+            overflow: hidden;
+            
+        }
+
+        .collapsible {
+            background-color: forestgreen;
+            color: white;
+            cursor: pointer;
+            padding: 2rem;
+            font-size: 1.25rem;
+            border: none;
+            text-align: left;
+            width: 75%;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0px;
+            border-bottom: 1px solid white;
+           margin: 0 auto;
+        }
+
+        .arrow {
+            transition: transform 0.3s ease;
+            color: whitesmoke;
+        }
+
+        .content {
+            padding: 1rem;
+            background-color: #121212;
+            display: none;
+            border: 1px solid black;
+            line-height: 1.7rem;
+            margin: 0;
+            border-radius: 0 0 8px 8px;
+            width : 75%;
+            margin: 0 auto;
+        }
+
+        .content.show {
+            display: block;
+        }
+
+        .rotate {
+            transform: rotate(180deg);
+        }
+
+        ::marker {
+            unicode-bidi: isolate;
+            font-variant-numeric: tabular-nums;
+            text-transform: none;
+            text-indent: 0px !important;
+            text-align: start !important;
+            text-align-last: auto !important;
+            color: black;
+        } 
+        
+footer {
+    background-color: rgb(29, 80, 76);
+    color: white;
+    text-align: center;
+    height: 200px;
+     width: 100%;
+     
+                
+}
+
+.footer-content h3 {
+    margin-bottom: 7px;
+    font-size: 24px;
+    color: black;
+}
+
+.socials {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.socials li {
+    display: inline;
+    font-size: 20px;
+}
+
+.socials a {
+    color: black;
+    font-size: 10px;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+a {
+  color: black;
+  font-weight:normal; /* Makes text bold */
+  font-size: 20px;
+  margin-bottom: 2px;
+ 
+}
+
+footer p { font-family: 'roboto';
+                color: black;
+                text-align: center;
+                padding-top: 5px;
+                font-size: 23px;
+    }
+
+    body.dark-mode {
+    background-color: var(--primary-light-clr); /* Light mode background */
+}
+
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h5 {
+    color: black;
+}
+
+body.dark-mode p {
+    color: black;
+}
+
+body.dark-mode .brown {
+    background-color: rgb(211, 208, 208);
+    color: black; /* Adjusted for better contrast */
+}
+
+body.dark-mode .line {
+    color: black;
+}
+
+body.dark-mode .title {
+    color: black;
+}
+
+body.dark-mode .video-tab-buttons button {
+    background-color: white;
+    color: black;
+}
+body.dark-mode .video-tab-buttons button.active {
+    background-color: #006b00; 
+}
+
+body.dark-mode .content {
+    background-color: white;
+    border: 1px solid white;
+}
+
+body.dark-mode ::marker {
+    color: white;
+}
+
+/* Optional: Handle .light and .black if needed */
+body.dark-mode .light {
+    background-color: white;
+}
+
+body.dark-mode .black {
+    background-color: white;
+}
+
+
+    </style>
+    <script>
+       
+        /* Course Tab Bar Script */
+        function openTab(evt, tabName) {
+            let i, tabContent, tabButtons;
+
+            // Hide all tab content
+            tabContent = document.getElementsByClassName('tab-content');
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = 'none';
+            }
+
+            // Remove 'active' class from all tab buttons
+            tabButtons = document.getElementsByClassName('tab-button');
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
+
+            // Show the current tab and add 'active' class to the button
+            document.getElementById(tabName).style.display = 'block';
+            evt.currentTarget.classList.add('active');
+        }
+
+        /* Collapsible Paragraph Script */
+        document.addEventListener('DOMContentLoaded', () => {
+            const collapsibles = document.querySelectorAll('.collapsible');
+
+            collapsibles.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling; // The content is the next div
+                    const arrow = button.querySelector('.arrow'); // Get the arrow span
+
+                    content.classList.toggle('show'); // Toggle content visibility
+                    arrow.classList.toggle('rotate'); // Rotate the arrow
+                });
+            });
+        });
+
+      
+        function showPlaylist(playlistId) {
+            var playlists = document.getElementsByClassName('video-tab-content');
+            var buttons = document.querySelectorAll('.video-tab-buttons button');
+            for (var i = 0; i < playlists.length; i++) {
+                playlists[i].classList.remove('active');
+            }
+            for (var j = 0; j < buttons.length; j++) {
+                buttons[j].classList.remove('active');
+            }
+            document.getElementById(playlistId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+   
+    
+</head>
+
+<body>
+    <!-- Website Container Starts -->
+    <div class="website-container">
+        
+
+            <!-- Content Area Starts -->
+            <div class="content-area" id="content-area">
+                <div class="abovecontiner">
+                       <div class="above"> 
+                        Exploring the World of Machine Learning
+                         </div> </div>
+                       
+                       
+                           <!-- First Paragraph Starts -->
+                            <div class="brown">
+                           <h3 id="t_b" >What is machine learning?</h3>
+                           <p id="t_b" >Machine learning is an area of artificial intelligence and computer science that comprises supervised and unsupervised learning and includes the development of software and algorithms that can make predictions based on data. Machine learning is utilized across various industries. In the field of data analytics, for example, machine learning is used to make predictions based on trends and insights from data.
+                            A prime example of the application of machine learning is the autonomous vehicle. Sensors around the vehicle deliver thousands of data points which are analyzed and processed to move the vehicle toward its destination.
+                           Collective data from thousands of self-driving cars can be used to improve vehicle safety and prevent accidents. There are many different career paths within the machine learning field that can lead to a fulfilling career. Machine learning online courses and machine learning certifications are two ways that individuals can develop the skills to compete for jobs in this field.
+                           </p></div>
+                          
+
+                            <!-- First Paragraph Ends -->
+
+               
+
+            
+
+                  
+                                  <!-- Collapsible Sections Start -->
+                    <div class="black" >             
+                    <div class="collapsible-container">
+                        <h2  id="t_b" > Your Roadmap to Machine Learning </h2>
+                        <button class="collapsible">
+                            <b>Type Of Machines Learning</b>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="content">
+                            <p class="p">Machine learning and artificial intelligence can sometimes be conflated with one another. In reality, they serve similar purposes under the same data science umbrella. Looking for a precise machine learning definition? Machine learning is a component of artificial intelligence that uses statistical methods to train algorithms to uncover patterns or insights that can be used to inform decisions. To better understand machine learning, it’s important to know the three types of machine learning:</p>
+                            <ul class="text">
+                                <li><b>Supervised machine learning</b>
+                                    <p >Uses datasets to train algorithms to make predictions. The algorithm predicts an outcome based on mapping inputs to desired outputs, adjusting the weights until the data is accurate. Examples include spam detection, text classification, and recommendation systems.</p>
+                                </li>
+                                <li><b>Unsupervised machine learning</b>
+                                    <p >Uses algorithms to uncover hidden patterns, classify data, and find insights. It does not have a target outcome but is used for sorting populations and demographics into groups. It can be applied in image recognition and customer segmentation.</p>
+                                </li>
+                                <li><b>Reinforcement machine learning</b>
+                                    <p>A behavioral algorithm that learns in real time through trial and error, using past experiences to better inform decisions. It’s useful for finding solutions to unresolved problems, like determining the best recommendation dynamically.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                    <div class="collapsible-container">
+                        <button class="collapsible">
+                            <b>Machine learning course curriculum</b>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="content">
+                            <p>There are a number of machine learning online courses that teach the basics of machine learning, cover the differences between machine learning versus artificial intelligence, and help map out the steps for how to become a machine learning engineer. A typical machine learning course could explore the following topics:</p>
+                            <ul class="text">
+                                <li>Data science</li>
+                                <li>Data mining</li>
+                                <li>Data analysis</li>
+                                <li>Statistical learning</li>
+                                <li>Pattern discovery</li>
+                            </ul>
+                            <p>A machine learning course might also delve deeper into the real-life applications of these topics, such as spam filtering, credit card fraud detection, facial recognition, and handwriting recognition.</p>
+                        </div>
+                    </div>
+                
+                    <div class="collapsible-container">
+                        <button class="collapsible">
+                            <b>How to become a machine learning engineer</b>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="content">
+                            <p>A variety of learning pathways exist for individuals interested in pursuing machine learning jobs, including a boot camp, or by obtaining a bachelor’s degree in computer or data science. There’s also the option of pursuing a bachelor’s degree in a related field.</p>
+                            <p>To become a machine learning engineer, it may be helpful to take a machine learning course online or in-person. Some machine learning engineer jobs as well as those in computer and information research science may require a master’s degree in computer science, computer engineering, math, statistics or a related subject. Advanced math skills may prove useful along this career path, so consider taking courses on linear algebra and group theory. Those who pursue a machine learning education may also take courses about data modeling, data architecture, machine learning frameworks, and programming languages such as Python that can help with building web applications.</p>
+                        </div>
+                    </div>
+                
+                    <div class="collapsible-container">
+                        <button class="collapsible">
+                            <b>Discover machine learning jobs</b>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="content">
+                            <p>Knowledge of machine learning can come in handy in many data- and AI-related jobs. Here are a few examples:</p>
+                            <ul class="text">
+                                <li>Big data engineer</li>
+                                <li>AI architect</li>
+                                <li>Data architect</li>
+                                <li>Data scientist</li>
+                                <li>Data modeler</li>
+                                <li>Database manager</li>
+                            </ul>
+                            <p>Having relevant skills and experience in the field of machine learning may help set individuals on the path to an exciting career. Take an online machine learning course and explore other AI, data science, predictive analytics, and programming courses to get started.</p>
+                        </div>
+                    </div>
+                   <div class="brown">
+                    <h2 id="t_b" > Machine learning methods</h2>
+                      <h3 id="t_b" >Supervised learning </h3>
+                    <p id="t_b" > Supervised learning, also known as supervised machine learning, is defined by its use of labeled datasets to train algorithms to classify data or predict outcomes accurately. As input data is fed into the model, the model adjusts its weights until it has been fitted appropriately. This occurs as part of the cross validation process to ensure that the model avoids overfitting or underfitting. Supervised learning helps organizations solve a variety of real-world problems at scale, such as classifying spam in a separate folder from your inbox. Some methods used in supervised learning include neural networks, Naïve Bayes, linear regression, logistic regression, random forest, and support vector machine (SVM).</p>
+                    
+                    <h3 id="t_b" > Unsupervised learning </h3>
+                    <p id="t_b" >Unsupervised learning, also known as unsupervised machine learning, uses machine learning algorithms to analyze and cluster unlabeled datasets (subsets called clusters). These algorithms discover hidden patterns or data groupings without the need for human intervention.
+
+                        Unsupervised learning’s ability to discover similarities and differences in information make it ideal for exploratory data analysis, cross-selling strategies, customer segmentation, and image and pattern recognition. It’s also used to reduce the number of features in a model through the process of dimensionality reduction. Principal component analysis (PCA) and singular value decomposition (SVD) are two common approaches for this. Other algorithms used in unsupervised learning include neural networks, k-means clustering, and probabilistic clustering methods. </p>
+                  
+                    <h3 id="t_b" >Reinforcement learning </h3>
+                    <p id="t_b" > Reinforcement learning is a machine learning model that is similar to supervised learning, but the algorithm isn’t trained using sample data. This model learns as it goes by using trial and error. A sequence of successful outcomes will be reinforced to develop the best recommendation or policy for a given problem.
+
+                        The IBM Watson® system that won the Jeopardy! challenge in 2011 is a good example. The system used reinforcement learning to learn when to attempt an answer (or question, as it were), which square to select on the board, and how much to wager—especially on daily doubles. </p>
+                  </div>
+                  </div>    
+                  <div class="light">
+                    <div class="video-tab-buttons">
+                        <button onclick="showPlaylist('playlist1')" class="active">Playlist 1</button>
+                        <button onclick="showPlaylist('playlist2')">Playlist 2</button>
+                        <button onclick="showPlaylist('playlist3')">Playlist 3</button>
+                        <button onclick="showPlaylist('playlist4')">Playlist 4</button>
+                    </div>
+                    <!-- Video Format Starts -->
+                    <div id="playlist1" class="video-tab-content active">
+                        <div class="videocontainer">
+                            <div class="video">
+                                <iframe src="https://www.youtube.com/embed/6mSx_KJxcHI?si=XIDrKjgE14dyCszQ" allowfullscreen></iframe>
+                                <div  id="t_b" class="title">Introduction to Machine Learning  </div>
+                                
+                            </div>
+                            <div class="video">
+                                <iframe src="https://www.youtube.com/embed/N6wxM4wZ7V0?si=b3Aw39RcLJdOy5Vw " allowfullscreen></iframe>
+                                <div  id="t_b" class="title"> The history of Machine Learning </div>
+                                
+                            </div>
+                            <div class="video">
+                                <iframe src=" https://www.youtube.com/embed/4NGM0U2ZSHU?si=JkQAoM4Vj2KEbMWF" allowfullscreen></iframe>
+                                <div id="t_b"  class="title">Techniques for Machine Learning </div>
+                                
+                            </div>
+                            <div class="video">
+                                <iframe src="https://www.youtube.com/embed/-DfeD2k2Kj0?si=yGzWi-SloR_F5BUF " allowfullscreen></iframe>
+                                <div  id="t_b" class="title">Setup your tools ready to build Machine Learning models </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div id="playlist2" class="video-tab-content">
+                        <div class="videocontainer">
+                            <div class="video">
+                                <iframe src="https://www.youtube.com/embed/XA3OaoW86R8?si=pJ3y6peTb7wP7UT2 " allowfullscreen></iframe>
+                                <div class="title">To Regression models for Machine Learning </div>
+                                
+                            </div>
+                            <div class="video">
+                                <iframe src=" https://www.youtube.com/embed/7E-jC8FLA2E?si=eL4NTj-C7jo-eo_3" allowfullscreen></iframe>
+                                <div class="title">Set up Jupyter Notebooks </div>
+                                
+                            </div>
+                            <div class="video">
+                                <iframe src="https://www.youtube.com/embed/2xkXL5EUpS0?si=s9yWQRxumdQRl4Kz" allowfullscreen></iframe>
+                                <div class="title">First Linear Regression Project in Python [ </div>
+                                
+                            </div>
+                            <div class="video">
+                                <iframe src=" https://www.youtube.com/embed/5qGjczWTrDQ?si=Zl9jrOHAJztxoNJ1" allowfullscreen></iframe>
+                                <div class="title">How to Analyze and Clean a Dataset  </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div id="playlist3" class="video-tab-content">
+                        <div class="videocontainer">
+                            <div class="video">
+                                <iframe src=" https://www.youtube.com/embed/uoRq-lW2eQo?si=krfPGCyKtpUSE6jI" allowfullscreen></iframe>
+                                <div class="title">The Key to Linear Regression </div>
+                               
+                            </div>
+                            <div class="video">
+                                <iframe src="https://www.youtube.com/embed/e4c_UP2fSjg?si=UGO4s4ka1MqQBcEo " allowfullscreen></iframe>
+                                <div class="title"> Linear and Polynomial Regression using Scikit-learn</div>
+                                
+                            </div>
+                            <div class="video">
+                                <iframe src="https://www.youtube.com/embed/B2X4H9vcXTs?si=NVNaFD4gDLaewTvq " allowfullscreen></iframe>
+                                <div class="title"> Data Analysis and Preparation for Logistic Regression</div>
+                                
+                            </div>
+                            <div class="video">
+                                <iframe src="https://www.youtube.com/embed/MmZS2otPrQ8?si=JcAt4hpiRV1qLLZr "  allowfullscreen></iframe>
+                                <div class="title">Classification of data </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div id="playlist4" class="video-tab-content">
+                        <div class="videocontainer">
+                            <div class="video">
+                                <iframe src="https://www.youtube.com/embed/yN7ypxC7838?si=ASpwgsuRZG_tYgge " allowfullscreen></iframe>
+                                <div class="title">Machine learning methods</div>
+                                
+                            </div>
+                            <div class="video">
+                                <iframe src="https://www.youtube.com/embed/kE5QZ8G_78c?si=J70EK8BKpM7E1Ed0" allowfullscreen></iframe>
+                                <div class="title"> Supervised Learning </div>
+                                
+                            </div>
+                            <div class="video">
+                                <iframe src="https://www.youtube.com/embed/D6gtZrsYi6c?si=Qt3zs7Z3DZSqMoa5 " allowfullscreen></iframe>
+                                <div class="title"> Unsupervised learning</div>
+                               
+                            </div>
+                            <div class="video">
+                                <iframe src=" https://www.youtube.com/embed/ELE2_Mftqoc?si=tjOvntszXKijfvoT " allowfullscreen></iframe>
+                                <div class="title">Reinforcement learning </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <!-- Video Format Ends -->
+                
+    
+
+
+                  <div class="abovecontiner"> 
+                    <h5><b>Maximize Your Potential</b></h5>
+                    <div class="line">The online course is comming to you sooner or sooner<b> in December!</b></div>
+                  </div>
+
+
+                  <div class="black">
+                  <h2 >Frequently Asked Questions</h2>
+
+                
+                    <div class="collapsible-container">
+                        <button class="collapsible">
+                            <b>What's the difference between machine learning and AI?</b>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="content">
+                            <p>Machine learning and artificial intelligence (AI) are closely connected but are not the same. With AI, a computer mimics learning and problem-solving to make decisions. Machine learning is how a computer uses statistics and data to learn to mimic human cognitive functions. Machine learning is a part of AI.</p>
+                        </div>
+                    </div>
+                
+                    <div class="collapsible-container">
+                        <button class="collapsible">
+                            <b>How long does it take to learn machine learning online?</b>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="content">
+                            <p>It depends on the machine learning online course. Some courses are self-paced and require a few weeks to complete; others require a couple of months.</p>
+                        </div>
+                    </div>
+                
+                    <div class="collapsible-container">
+                        <button class="collapsible">
+                            <b>Is machine learning related to data science?</b>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="content">
+                            <p>Machine learning is a part of data science. Machine learning allows individuals to extract insights from data and build predictive models.</p>
+                        </div>
+                    </div>
+                
+                    <div class="collapsible-container">
+                        <button class="collapsible">
+                            <b>Do you need to know Python for machine learning?</b>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="content">
+                            <p>Python is one of the most common programming languages, so it can be important to become familiar with it. Other languages include R, Java, and C++.</p>
+                        </div>
+                    </div>
+                
+                    <div class="collapsible-container">
+                        <button class="collapsible">
+                            <b>Is pursuing machine learning online worth it?</b>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="content">
+                            <p>Machine learning and artificial intelligence are burgeoning areas of tech, and data plays a big role in almost any company. Students and professionals can find their niche within the field by taking machine learning courses online.</p>
+                        </div>
+                    </div>
+                
+                    <div class="collapsible-container">
+                        <button class="collapsible">
+                            <b>What degree can be helpful for a career in machine learning?</b>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="content">
+                            <p>There are several courses and degree programs available for aspiring machine learning professionals from undergraduate degrees in math, computer science, and statistics to a master’s in data science.</p>
+                        </div>
+                    </div>
+                    </div>
+                    <!-- Collapsible Sections End -->
+                    
+                    <footer class="green">
+                      
+                        <div class="footer-content">
+                            <h3>Explore more about machine learning from Harvard courses</h3>
+                            <a href="https://www.edx.org/certificates/professional-certificate/harvardx-data-science" target="_blank" rel="noopener noreferrer">How to get certifiacts?</i></a>
+                        
+                            <ul class="socials">
+                            <li><a href="https://www.edx.org/learn/data-science/harvard-university-introduction-to-data-science-with-python" rel="noopener noreferrer"> Data Science</i></a></li>
+                             <li><a href="https://www.edx.org/learn/machine-learning/harvard-university-machine-learning-and-ai-with-python" target="_blank" rel="noopener noreferrer">Machine Learning and AI with Python  </i></a></li>
+                             
+                           </ul>
+                        </div>
+                        <div class="footer-bottom">
+                            <p> &copy; 2025 Web Development Course. All rights reserved.</p>
+                        </div>
+                   </footer>
+                   <script src="script.js"></script>
+                </body>
+                
+                </html>
